@@ -11,8 +11,53 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="main.js" defer></script>
     <title>Rocketcard</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section class="card">
+        <article>
+          <div class="header">
+            <img src="assets/logo.svg" alt="" />
+            <p id="idUser"></p>
+          </div>
+          <div class="imgUser">
+            <img src="" alt="" id="imgProfile" />
+          </div>
+          <div class="info">
+            <div class="seguidores">
+              <img src="assets/followers.svg" alt="" />
+              <p id="followers"><img src="" alt="" /></p>
+            </div>
+            <div class="seguindo">
+              <img src="assets/following.svg" alt="" />
+              <p id="following"></p>
+            </div>
+            <div class="repo">
+              <img src="assets/repository.svg" alt="" />
+              <p id="repository"></p>
+            </div>
+            <div class="compa">
+              <img src="assets/company.svg" alt="" />
+              <p id="company">Não Possui</p>
+            </div>
+            <div class="local">
+              <img src="assets/location.svg" alt="" />
+              <p id="position"></p>
+            </div>
+          </div>
+          <footer>
+            <img src="assets/logo.svg" alt="" id="logo" />
+            <p>ROCKETCARD</p>
+          </footer>
+        </article>
+        <div class="botao">
+          <p>Customizar Rocketcard</p>
+          <button>Gerar background</button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
