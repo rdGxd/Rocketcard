@@ -27,7 +27,9 @@ function getUser(url) {
       if (data.company !== null) {
         company.textContent = data.company;
       }
-      position.textContent = data.location;
+      if (data.location !== null) {
+        position.textContent = data.location;
+      }
     })
     .catch((error) => console.error(error));
 }
