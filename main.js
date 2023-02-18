@@ -8,8 +8,10 @@ function userName() {
   const nome = prompt("Digite seu nome de usuário do GitHub: ");
   const url = `https://api.github.com/users/${nome}`;
   if (nome === "" || nome === null) {
+    section.style.display = "none"
     userName();
   } else {
+    section.style.display= "flex"
     getUser(url);
   }
 }
