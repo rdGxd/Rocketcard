@@ -1,13 +1,20 @@
 const btn = document.querySelector("button");
 const section = document.querySelector("section");
 
-// Mostra um prompt na tela pedindo ao usuário para colocar o Username do GitHub
+// Sempre que o botão é clicado chama a função randomColor()
+btn.addEventListener("click", randomColors);
+
+// Chama um prompt na tela pedindo ao usuário para colocar o Username do GitHub necessário para buscar na API do GITHUB
 function userName() {
-  const nome = prompt("Digite seu Username do GitHub: ");
-  const url = `https://api.github.com/users/${nome}`;
-  if (nome === "" || nome === null) {
+  // Salva o nome do usuário e passar para o URL
+  const user = prompt("Digite seu Username do GitHub: ");
+  // Junta a URL da API + USERNAME
+  const url = `https://api.github.com/users/${user}`;
+  // Verificar se o valor a nulo ou vazio se tiver ele chama função de novo
+  if (user === "" || user === null) {
     userName();
   } else {
+    // Se não tiver vazio exibe a tela com os dados e chama a função getUser() passando a URL
     section.style.display = "flex";
     getUser(url);
   }
@@ -15,6 +22,7 @@ function userName() {
 
 // Função para pegar os dados da API do GitHub
 function getUser(url) {
+  // Vai até a API buscar os dados necessário para exibir na tela
   axios
     .get(url)
     .then((response) => {
@@ -24,9 +32,11 @@ function getUser(url) {
       followers.textContent += `${data.followers}`;
       following.textContent += `${data.following}`;
       repository.textContent += `${data.public_repos}`;
+      // Verifica se o usuário coloco alguma empresa
       if (data.company !== null) {
         company.textContent = data.company;
       }
+      // Verifica se o usuário coloco alguma localização
       if (data.location !== null) {
         localization.textContent = data.location;
       }
@@ -34,14 +44,12 @@ function getUser(url) {
     .catch((error) => console.error(error));
 }
 
-userName();
-
 // Função para gerar as cores de forma aleatória
-function randomColor() {
-  let valor1 = Math.floor(Math.random() * 255);
-  let valor2 = Math.floor(Math.random() * 255);
-  let valor3 = Math.floor(Math.random() * 255);
+function randomColors() {
+  const valor1 = Math.floor(Math.random() * 255);
+  const valor2 = Math.floor(Math.random() * 255);
+  const valor3 = Math.floor(Math.random() * 255);
   section.style.backgroundColor = `rgb(${valor1}, ${valor2}, ${valor3})`;
 }
 
-btn.addEventListener("click", randomColor);
+userName();

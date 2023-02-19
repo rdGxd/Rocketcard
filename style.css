@@ -22,51 +22,27 @@ body {
 
 p {
   color: var(--text);
+  font-weight: 400;
 }
 
 div {
   display: flex;
 }
 
-button {
-  width: 14.31rem;
-  height: 3.71rem;
-  margin-top: 2.06rem;
-  background-color: var(--bg);
-  border: 0.12rem solid var(--border-button);
-  color: var(--buttons);
-  border-radius: 0.93rem;
-}
-
-.botao {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3.12rem;
-  margin-left: 9.12rem;
-  justify-content: center;
-  flex-direction: column;
-
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.87rem;
-}
-
 /* HEADER */
 .header {
+  color: var(--text);
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+
   display: flex;
   align-items: center;
   margin-left: 2.09rem;
   margin-top: 2.11rem;
 
   width: 14.37rem;
-  height: 3.40rem;
-
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
+  height: 3.4rem;
 }
 
 .header img {
@@ -128,7 +104,7 @@ section {
   width: 12.18rem;
   height: 14.37rem;
   font-style: normal;
-  font-weight: 400;
+
   font-size: 1rem;
   line-height: 1.5rem;
 
@@ -165,11 +141,39 @@ footer {
   margin-left: 12.5rem;
   margin-top: 6.25rem;
   font-style: normal;
-  font-weight: 400;
+
   font-size: 1.25rem;
   line-height: 1.87rem;
 }
 
 footer p {
   text-transform: uppercase;
+}
+
+/* BUTTON */
+
+button {
+  width: 14.31rem;
+  height: 3.71rem;
+  margin-top: 2.06rem;
+  background-color: var(--bg);
+  border: 0.12rem solid var(--border-button);
+  color: var(--buttons);
+  border-radius: 0.93rem;
+}
+
+.botao {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.12rem;
+  margin-left: 9.12rem;
+  justify-content: center;
+  flex-direction: column;
+
+  font-style: normal;
+
+  font-size: 1.25rem;
+  line-height: 1.87rem;
 }
