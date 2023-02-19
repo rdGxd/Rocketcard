@@ -1,9 +1,9 @@
 const btn = document.querySelector("button");
 const section = document.querySelector("section");
 
-// Mostra um prompt na tela pedindo ao usuário para colocar o User name do GitHub
+// Mostra um prompt na tela pedindo ao usuário para colocar o Username do GitHub
 function userName() {
-  const nome = prompt("Digite seu nome de usuário do GitHub: ");
+  const nome = prompt("Digite seu Username do GitHub: ");
   const url = `https://api.github.com/users/${nome}`;
   if (nome === "" || nome === null) {
     userName();
