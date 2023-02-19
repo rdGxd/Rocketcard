@@ -21,14 +21,14 @@ function getUser(url) {
       const data = response.data;
       idUser.textContent = data.login;
       imgProfile.setAttribute("src", `${data.avatar_url}`);
-      followers.textContent = `${data.followers} Seguidores`;
-      following.textContent = `${data.following} Seguindo`;
-      repository.textContent = `${data.public_repos} Repositórios`;
+      followers.textContent += `${data.followers}`;
+      following.textContent += `${data.following}`;
+      repository.textContent += `${data.public_repos}`;
       if (data.company !== null) {
         company.textContent = data.company;
       }
       if (data.location !== null) {
-        position.textContent = data.location;
+        localization.textContent = data.location;
       }
     })
     .catch((error) => console.error(error));
