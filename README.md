@@ -2,5 +2,5 @@
 
 - Consumir API do Github;
 - Ter um botão que altere a cor de fundo;
-
-Desafio feito: https://rdgxd.github.io/Rocketcard/
+- 
+<a href="https://rdgxd.github.io/Rocketcard/" target="_blank">Desafio feito</a>
