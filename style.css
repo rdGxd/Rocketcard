@@ -47,6 +47,7 @@ div {
 
 .header img {
   margin-right: 1.21rem;
+  padding: 0.62rem;
   width: 3.46rem;
   height: 3.46rem;
 
@@ -126,12 +127,6 @@ section {
 
 .info p {
   margin-top: 0.93rem;
-}
-
-#logo {
-  width: 1.75rem;
-  height: 2.14rem;
-  margin-right: 1.21rem;
 }
 
 /* FOOTER */
