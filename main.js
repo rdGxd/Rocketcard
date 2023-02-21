@@ -14,7 +14,7 @@ function userName() {
   if (user === "" || user === null) {
     userName();
   } else {
-    // Se não tiver vazio exibe a tela com os dados e chama a função getUser() passando a URL
+    // Se o valor não for vazio ou nulo era passa a URL para o getUseR() e liberar o section com as informações
     section.style.display = "flex";
     getUser(url);
   }
