@@ -10,7 +10,7 @@ function userName() {
   const user = prompt("Digite seu Username do GitHub: ");
   // Junta a URL da API + USERNAME
   const url = `https://api.github.com/users/${user}`;
-  // Verificar se o valor a nulo ou vazio se tiver ele chama função de novo
+  // Verifica se o valor é nulo ou vazio se for ele chama a função userName() novamente
   if (user === "" || user === null) {
     userName();
   } else {
