@@ -11,7 +11,8 @@ function userName() {
   // Junta a URL da API + USERNAME
   const url = `https://api.github.com/users/${user}`;
   // Verifica se o valor é nulo ou vazio se for ele chama a função userName() novamente
-  if (user === "" || user === null) {
+  if (!user) {
+    alert("Usuário invalido ou não encontrado");
     userName();
   } else {
     // Se o valor não for vazio ou nulo era passa a URL para o getUseR() e liberar o section com as informações
@@ -20,36 +21,34 @@ function userName() {
   }
 }
 
-// Função para pegar os dados da API do GitHub
-function getUser(url) {
-  // Vai até a API buscar os dados necessário para exibir na tela
-  axios
-    .get(url)
-    .then((response) => {
-      const data = response.data;
-      idUser.textContent = data.login;
-      imgProfile.setAttribute("src", `${data.avatar_url}`);
-      followers.textContent += `${data.followers}`;
-      following.textContent += `${data.following}`;
-      repository.textContent += `${data.public_repos}`;
-      // Verifica se o usuário coloco alguma empresa
-      if (data.company !== null) {
-        company.textContent = data.company;
-      }
-      // Verifica se o usuário coloco alguma localização
-      if (data.location !== null) {
-        localization.textContent = data.location;
-      }
-    })
-    .catch((error) => console.error(error));
+// Função para consumir a API do GitHub
+async function getUser(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    idUser.textContent = data.login;
+    imgProfile.setAttribute("src", `${data.avatar_url}`);
+    followers.textContent += `${data.followers}`;
+    following.textContent += `${data.following}`;
+    repository.textContent += `${data.public_repos}`;
+    // Verifica se o usuário está em alguma empresa
+    if (data.company) {
+      company.textContent = data.company;
+    }
+    // Verifica se o usuário informo alguma localização
+    if (data.location) {
+      localization.textContent = data.location;
+    }
+  } catch (e) {
+    console.error(e);
+  }
 }
-
 // Função para gerar as cores de forma aleatória
 function randomColors() {
-  const valor1 = Math.floor(Math.random() * 255);
-  const valor2 = Math.floor(Math.random() * 255);
-  const valor3 = Math.floor(Math.random() * 255);
-  section.style.backgroundColor = `rgb(${valor1}, ${valor2}, ${valor3})`;
+  const R = Math.floor(Math.random() * 255);
+  const G = Math.floor(Math.random() * 255);
+  const B = Math.floor(Math.random() * 255);
+  section.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
 }
 
 userName();
